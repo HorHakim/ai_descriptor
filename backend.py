@@ -56,11 +56,3 @@ def describe_image(image_path):
 
     return chat_response.choices[0].message.content
 
-
-
-
-
-
-
-image_path = "C:/Users/horai/Documents/projets/jpo/image.png"
-print(describe_image(image_path))
