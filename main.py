@@ -1,12 +1,13 @@
 import streamlit as st
+from backend import describe_image
+
 import tempfile
 import os
-from backend import describe_image
 
 st.set_page_config(page_title="Description d'image piquante", layout="centered")
 
-st.title("🖼️ Analyse d’image à la sauce Mistral")
-st.markdown("Dépose une image et laisse Mistral te balancer une description pleine de mordant 😏")
+st.title("🖼️ La première IA qui vanne ton pote !")
+st.markdown("Dépose une image et laisse moi te vanner ! 😏")
 
 uploaded_file = st.file_uploader("Choisis une image", type=["jpg", "jpeg", "png"])
 

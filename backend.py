@@ -22,7 +22,10 @@ def encode_image(image_path):
         return None
 
 
-
+def read_file(file_path):
+    with open(file_path, encoding="utf-8") as file:
+        content = file.read()
+    return content
 
 
 def describe_image(image_path):
@@ -37,13 +40,16 @@ def describe_image(image_path):
     chat_response = client.chat.complete(
         model = model,
         messages = [
+            {"role" : "system",
+            "content" : read_file(file_path="context.txt"),
 
+            },
             {
                 "role": "user",
                 "content": [
                     {
                         "type": "text",
-                        "text": "Décris l'image en étant le plus factuel possible"
+                        "text": read_file(file_path="prompt.txt")
                     },
                     {
                         "type": "image_url",
